@@ -10,7 +10,7 @@ const SOLUTIONS = [
     title: "Farm Building Doors",
     desc: "Insulated steel doors built to protect your equipment, livestock, and materials year-round.",
     href: "/agricultural",
-    img: "https://images.unsplash.com/photo-1779941674065-d419a3461a95?q=8",
+    img: "/ag1.png",
     btnLabel: "Explore Doors",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
@@ -22,7 +22,7 @@ const SOLUTIONS = [
     title: "Agricultural Doors",
     desc: "Large opening solutions for barns, machine shops, storage buildings, and more.",
     href: "/agricultural",
-    img: "https://images.unsplash.com/photo-1661634425357-75c4002ff67c?q=80",
+    img: "/ag2.png",
     btnLabel: "View Door Options",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
@@ -35,7 +35,7 @@ const SOLUTIONS = [
     title: "Dock Equipment",
     desc: "Dock levelers, seals, bumpers, and restraints designed for ag facilities and loading needs.",
     href: "/commercial",
-    img: "https://images.unsplash.com/photo-1772020286569-755867a682ff?q=80",
+    img: "/ag3.png",
     btnLabel: "Explore Equipment",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
@@ -50,7 +50,7 @@ const SOLUTIONS = [
     title: "Service & Repairs",
     desc: "Fast, reliable service to minimize downtime and keep your operation running strong.",
     href: "/services",
-    img: "https://images.unsplash.com/photo-1567361808960-dec9cb578182?q=80",
+    img: "/ag4.png",
     btnLabel: "View Service Options",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
@@ -61,11 +61,11 @@ const SOLUTIONS = [
 ];
 
 const GALLERY = [
-  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80",
-  "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&q=80",
-  "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80",
-  "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80",
-  "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80",
+  "/agp.png",
+  "/agp1.png",
+  "/agp2.png",
+  "/agp4.png",
+  "/agp5.png",
 ];
 
 const FEATURES = [
@@ -117,7 +117,7 @@ export default function AgriculturalPage() {
 
       {/* ── FEATURE BAR ── */}
       <section style={{ backgroundColor: "#0D0D0D", borderBottom: "1px solid #1A1A1A" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(5, 1fr)" }}>
+        <div className="nb-features5" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(5, 1fr)" }}>
           {FEATURES.map((f, i) => (
             <div key={f.title} style={{ padding: "1.75rem 1rem", borderRight: i < 4 ? "1px solid #1A1A1A" : "none", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, color: "#FFFFFF", fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.07em" }}>
@@ -137,7 +137,7 @@ export default function AgriculturalPage() {
           <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#FFFFFF", letterSpacing: "0.06em", textAlign: "center", marginBottom: "2.5rem" }}>
             Built for Every Season
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem" }}>
+          <div className="nb-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem" }}>
             {SOLUTIONS.map((s) => (
               <div
                 key={s.title}
@@ -171,7 +171,7 @@ export default function AgriculturalPage() {
           <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#FFFFFF", letterSpacing: "0.06em", textAlign: "center", marginBottom: "2.5rem" }}>
             Recent Agricultural Projects
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "0.75rem", marginBottom: "1.5rem" }}>
+          <div className="nb-gallery" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "0.75rem", marginBottom: "1.5rem" }}>
             {GALLERY.map((img, i) => (
               <div
                 key={i}
@@ -190,8 +190,32 @@ export default function AgriculturalPage() {
       </section>
 
       {/* ── WHY NORTHBUILT ── */}
-      <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+      <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
+        {/* Mountain backdrop */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/moun.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center bottom",
+            backgroundSize: "cover",
+            opacity: 0.55,
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Left black shade */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.85) 30%, rgba(11,11,11,0.35) 60%, rgba(11,11,11,0) 85%)",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        <div className="nb-grid-2" style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "60% 40%", gap: "2rem", alignItems: "center" }}>
           <div>
             <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#FFFFFF", letterSpacing: "0.04em", marginBottom: "0.25rem", lineHeight: 1.05 }}>
               Why Farmers<br />Choose <span style={{ color: "#F26522" }}>Northbuilt</span>
@@ -205,13 +229,21 @@ export default function AgriculturalPage() {
               ))}
             </div>
           </div>
-          <div style={{ position: "relative", height: "380px", borderRadius: "6px", overflow: "hidden" }}>
-            <Image
-              src="/agri.png"
-              alt="Farm Operation"
-              fill
-              style={{ objectFit: "cover" }}
-              unoptimized
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <img
+              src="/car.png"
+              alt="Northbuilt Truck"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+                WebkitMaskImage:
+                  "linear-gradient(90deg, transparent 0%, #000 18%, #000 100%), linear-gradient(0deg, transparent 0%, #000 12%, #000 100%)",
+                maskImage:
+                  "linear-gradient(90deg, transparent 0%, #000 18%, #000 100%), linear-gradient(0deg, transparent 0%, #000 12%, #000 100%)",
+                WebkitMaskComposite: "source-in",
+                maskComposite: "intersect",
+              }}
             />
           </div>
         </div>

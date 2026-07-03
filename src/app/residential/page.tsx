@@ -10,33 +10,33 @@ const STYLES = [
     title: "Contemporary",
     desc: "Clean lines and modern designs for a sleek, updated look.",
     href: "/residential",
-    img: "https://images.unsplash.com/photo-1574848296471-28f79a036f79?q=80",
+    img: "/gat1.png",
   },
   {
     title: "Carriage House",
     desc: "Timeless charm with classic elegance and detail.",
     href: "/residential",
-    img: "https://images.unsplash.com/photo-1543896735-02ec3fcb7976?q=80",
+    img: "/gat2.png",
   },
   {
     title: "Traditional",
     desc: "Versatile designs that suit any home style.",
     href: "/residential",
-    img: "https://images.unsplash.com/photo-1603058817990-2b9a9abbce86?q=80",
+    img: "/gat3.png",
   },
   {
     title: "Full View & Aluminum",
     desc: "Modern glass and aluminum options for a bold statement.",
     href: "/residential",
-    img: "https://images.unsplash.com/photo-1776070298874-5cde64a1315d?q=80",
+    img: "/gat4.png",
   },
 ];
 
 const GALLERY = [
-  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80",
-  "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80",
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",
-  "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80",
+  "/res1.png",
+  "/res2.png",
+  "/res3.png",
+  "/res4.png",
 ];
 
 const WHY = [
@@ -103,7 +103,7 @@ export default function ResidentialPage() {
 
       {/* ── FEATURE BAR ── */}
       <section style={{ backgroundColor: "#0D0D0D", borderBottom: "1px solid #1A1A1A" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+        <div className="nb-features" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
           {FEATURES.map((f, i) => (
             <div
               key={f.title}
@@ -159,7 +159,7 @@ export default function ResidentialPage() {
           <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#FFFFFF", letterSpacing: "0.06em", textAlign: "center", marginBottom: "2.5rem" }}>
             Find the Perfect Style for Your Home
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem" }}>
+          <div className="nb-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem" }}>
             {STYLES.map((s) => (
               <div
                 key={s.title}
@@ -190,7 +190,7 @@ export default function ResidentialPage() {
           <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#FFFFFF", letterSpacing: "0.06em", textAlign: "center", marginBottom: "2.5rem" }}>
             Recent Residential Installs
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0.75rem", marginBottom: "1.5rem" }}>
+          <div className="nb-gallery" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0.75rem", marginBottom: "1.5rem" }}>
             {GALLERY.map((img, i) => (
               <div
                 key={i}
@@ -212,7 +212,31 @@ export default function ResidentialPage() {
 
       {/* ── WHY NORTHBUILT ── */}
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+        {/* Mountain backdrop */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/moun.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center bottom",
+            backgroundSize: "cover",
+            opacity: 0.55,
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Left black shade */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.85) 30%, rgba(11,11,11,0.35) 60%, rgba(11,11,11,0) 85%)",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        <div className="nb-grid-2" style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "60% 40%", gap: "2rem", alignItems: "center" }}>
           <div>
             <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#FFFFFF", letterSpacing: "0.04em", marginBottom: "0.25rem", lineHeight: 1.05 }}>
               Why Homeowners<br />Choose <span style={{ color: "#F26522" }}>Northbuilt</span>
@@ -226,13 +250,21 @@ export default function ResidentialPage() {
               ))}
             </div>
           </div>
-          <div style={{ position: "relative", height: "380px", borderRadius: "6px", overflow: "hidden" }}>
-            <Image
-              src="/our.png"
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <img
+              src="/car.png"
               alt="Northbuilt Truck"
-              fill
-              style={{ objectFit: "cover" }}
-              unoptimized
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+                WebkitMaskImage:
+                  "linear-gradient(90deg, transparent 0%, #000 18%, #000 100%), linear-gradient(0deg, transparent 0%, #000 12%, #000 100%)",
+                maskImage:
+                  "linear-gradient(90deg, transparent 0%, #000 18%, #000 100%), linear-gradient(0deg, transparent 0%, #000 12%, #000 100%)",
+                WebkitMaskComposite: "source-in",
+                maskComposite: "intersect",
+              }}
             />
           </div>
         </div>

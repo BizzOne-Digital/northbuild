@@ -80,6 +80,7 @@ export default function ContactPage() {
       {/* FORM + SIDEBAR */}
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem" }}>
         <div
+          className="nb-grid-2"
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
@@ -111,7 +112,7 @@ export default function ContactPage() {
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {/* Name Row */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                  <div className="nb-stack-sm" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                     <input
                       style={inputStyle}
                       name="firstName"
@@ -258,7 +259,7 @@ export default function ContactPage() {
               <h3 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, color: "#FFFFFF", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "1.25rem" }}>
                 How Can We Help?
               </h3>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+              <div className="nb-stack-sm" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
                 {CONTACT_SERVICES.map((s) => (
                   <div
                     key={s.title}

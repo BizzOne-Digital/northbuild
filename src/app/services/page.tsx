@@ -140,7 +140,7 @@ export default function ServicesPage() {
 
       {/* ── FEATURE BAR ── */}
       <section style={{ backgroundColor: "#0D0D0D", borderBottom: "1px solid #1A1A1A" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(5, 1fr)" }}>
+        <div className="nb-features5" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(5, 1fr)" }}>
           {FEATURES.map((f, i) => (
             <div key={f.title} style={{ padding: "1.75rem 1rem", borderRight: i < 4 ? "1px solid #1A1A1A" : "none" }}>
               <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, color: "#FFFFFF", fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: "0.4rem" }}>
@@ -166,7 +166,7 @@ export default function ServicesPage() {
               From broken springs to full opener installs — we handle it all, fast and right.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.25rem" }}>
+          <div className="nb-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.25rem" }}>
             {SERVICES.map((s) => (
               <div
                 key={s.title}
@@ -204,7 +204,7 @@ export default function ServicesPage() {
               Simple, transparent, and built around your schedule.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0" }}>
+          <div className="nb-features" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0" }}>
             {PROCESS.map((p, i) => (
               <div
                 key={p.step}
@@ -249,7 +249,7 @@ export default function ServicesPage() {
 
       {/* ── WHY NORTHBUILT ── */}
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+        <div className="nb-grid-2" style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
           <div style={{ position: "relative", height: "400px", borderRadius: "6px", overflow: "hidden" }}>
             <Image
               src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=85"

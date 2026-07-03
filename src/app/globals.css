@@ -172,3 +172,46 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .section-py { padding-top: 3rem; padding-bottom: 3rem; }
 }
+
+/* ── Responsive grid utilities ──
+   Inline styles set the desktop column count; these media queries
+   override grid-template-columns on smaller screens (!important beats
+   inline style). Desktop (>=1024px) keeps whatever the inline value is. */
+@media (max-width: 1023px) {
+  .nb-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .nb-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .nb-grid-5 { grid-template-columns: repeat(3, 1fr) !important; }
+  .nb-features { grid-template-columns: repeat(2, 1fr) !important; }
+  .nb-gallery { grid-template-columns: repeat(3, 1fr) !important; }
+  .nb-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .nb-grid-4,
+  .nb-grid-3,
+  .nb-grid-5,
+  .nb-features { grid-template-columns: 1fr !important; }
+  .nb-gallery { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* 5-item feature bar (commercial / agricultural) */
+@media (max-width: 1023px) {
+  .nb-features5 { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 640px) {
+  .nb-features5 { grid-template-columns: 1fr !important; }
+}
+
+/* Two-up rows (form fields etc.) that should stack on small phones only */
+@media (max-width: 640px) {
+  .nb-stack-sm { grid-template-columns: 1fr !important; }
+}
+
+/* Drop the vertical dividers when feature-bar items wrap onto new rows */
+@media (max-width: 1023px) {
+  .nb-features > *,
+  .nb-features5 > * { border-right: none !important; border-bottom: 1px solid #1A1A1A; }
+}

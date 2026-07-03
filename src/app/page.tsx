@@ -52,7 +52,7 @@ const SOLUTIONS = [
     title: "Residential",
     subtitle: "Garage Doors",
     href: "/residential",
-    img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80",
+    img: "/img1.png",
     btnLabel: "Explore Residential",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -64,7 +64,7 @@ const SOLUTIONS = [
     title: "Commercial",
     subtitle: "Doors & Dock Equipment",
     href: "/commercial",
-    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80",
+    img: "/img2.png",
     btnLabel: "Explore Commercial",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -77,7 +77,7 @@ const SOLUTIONS = [
     title: "Agricultural",
     subtitle: "Doors & Equipment",
     href: "/agricultural",
-    img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80",
+    img: "/img3.png",
     btnLabel: "Explore Agricultural",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -92,7 +92,7 @@ const SOLUTIONS = [
     title: "Service & Repairs",
     subtitle: "Fast · Reliable · Professional",
     href: "/services",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80",
+    img: "/img4.png",
     btnLabel: "View Services",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -103,13 +103,13 @@ const SOLUTIONS = [
 ];
 
 const GALLERY = [
-  { img: "https://images.unsplash.com/photo-1628297167427-597e677e4a41?q=80", label: "Full View Aluminum" },
-  { img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80", label: "Carriage House" },
-  { img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80", label: "Commercial Roll-up" },
-  { img: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=700&q=80", label: "Agricultural Steel" },
+  { img: "/1.png", label: "Full View Aluminum" },
+  { img: "/2.png", label: "Carriage House" },
+  { img: "/3.png", label: "Commercial Roll-up" },
+  { img: "/4.png", label: "Agricultural Steel" },
 ];
 
-const BRANDS = ["Upwardor", "Richards-Wilcox", "Garaga", "LiftMaster", "Manaras Opera"];
+const BRANDS = ["Upwardor", "Richards-Wilcox", "Garaga", "LiftMaster", "ManarasOpera"];
 
 const ADVANTAGES = [
   "Quality materials & expert craftsmanship",
@@ -155,7 +155,7 @@ export default function HomePage() {
 
       {/* ── FEATURE BAR ── */}
       <section style={{ backgroundColor: "#0D0D0D", borderBottom: "1px solid #1A1A1A" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+        <div className="nb-features" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
           {FEATURES.map((f, i) => (
             <div key={f.title} style={{ padding: "2rem 1.5rem", borderRight: i < 3 ? "1px solid #1A1A1A" : "none", display: "flex", alignItems: "flex-start", gap: "1rem" }}>
               <div style={{ flexShrink: 0, marginTop: "2px" }}>{f.icon}</div>
@@ -181,7 +181,7 @@ export default function HomePage() {
               Solutions Built for Every Need
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.25rem" }}>
+          <div className="nb-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.25rem" }}>
             {SOLUTIONS.map((s) => (
               <div
                 key={s.title}
@@ -218,7 +218,7 @@ export default function HomePage() {
               Our Work. <span style={{ color: "#F26522" }}>Your Peace of Mind.</span>
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem", marginBottom: "1.5rem" }}>
+          <div className="nb-gallery" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem", marginBottom: "1.5rem" }}>
             {GALLERY.map((item, i) => (
               <div
                 key={i}
@@ -243,8 +243,32 @@ export default function HomePage() {
       </section>
 
       {/* ── NORTHBUILT ADVANTAGE ── */}
-      <section style={{ backgroundColor: "#121212", padding: "5rem 1.5rem" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+      <section style={{ position: "relative", backgroundColor: "#121212", padding: "5rem 1.5rem", overflow: "hidden" }}>
+        {/* Mountain backdrop */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/moun.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center bottom",
+            backgroundSize: "cover",
+            opacity: 0.5,
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Left black shade */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(90deg, #121212 0%, rgba(18,18,18,0.85) 25%, rgba(18,18,18,0.35) 55%, rgba(18,18,18,0) 80%)",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        <div className="nb-grid-2" style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
           <div>
             <div style={{ display: "inline-block", width: "40px", height: "3px", backgroundColor: "#F26522", marginBottom: "1rem" }} />
             <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2.2rem, 4vw, 3.2rem)", color: "#FFFFFF", letterSpacing: "0.04em", marginBottom: "1.5rem", lineHeight: 1.05 }}>
@@ -274,21 +298,19 @@ export default function HomePage() {
       </section>
 
       {/* ── BRANDS ── */}
-      <section style={{ backgroundColor: "#0D0D0D", padding: "2.5rem 1.5rem", borderTop: "1px solid #1A1A1A" }}>
+      <section style={{ backgroundColor: "#FFFFFF", padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-          <p style={{ textAlign: "center", color: "#505050", fontFamily: "'Inter', sans-serif", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "1.75rem" }}>
+          <p style={{ textAlign: "center", color: "#1A1A1A", fontFamily: "'Inter', sans-serif", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "1.75rem" }}>
             We Work with Top Quality Brands
           </p>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "3.5rem", flexWrap: "wrap" }}>
             {BRANDS.map((brand) => (
-              <span
+              <img
                 key={brand}
-                style={{ color: "#3A3A3A", fontFamily: "'Inter', sans-serif", fontWeight: 800, fontSize: "0.88rem", letterSpacing: "0.06em", textTransform: "uppercase", transition: "color 0.2s", cursor: "default" }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#D7D7D7")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#3A3A3A")}
-              >
-                {brand}
-              </span>
+                src={`/${brand}.png`}
+                alt={brand}
+                style={{ height: "72px", width: "auto", objectFit: "contain" }}
+              />
             ))}
           </div>
         </div>
