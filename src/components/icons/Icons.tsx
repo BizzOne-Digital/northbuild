@@ -61,7 +61,7 @@ export function MapleLeafIcon({ className = "", color = "#F26522", size = 24 }: 
       <path
         d="M12 2C12 2 9 6 6 6C6 6 9 8 8 11C8 11 5 10 4 12C4 12 7 12 8 14C8 14 6 15 7 17C7 17 10 15 12 16V22M12 2C12 2 15 6 18 6C18 6 15 8 16 11C16 11 19 10 20 12C20 12 17 12 16 14C16 14 18 15 17 17C17 17 14 15 12 16"
         stroke={color}
-        strokeWidth="1.5"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
@@ -235,6 +235,37 @@ export function HandshakeIcon({ className = "", color = "#F26522", size = 24 }: 
       <path d="M20.42 4.58C19.92 4.08 19.29 3.76 18.61 3.67C17.93 3.58 17.24 3.74 16.67 4.13L13 7H7L3 11L5.5 13.5L8 11H9L11.83 13.83L12.67 14.67C13.46 15.46 14.54 15.46 15.33 14.67L20.42 9.58C20.92 9.08 21.2 8.41 21.2 7.71C21.2 7.01 20.92 6.34 20.42 5.84" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3 11L7 15L5 17L3 15" stroke={color} strokeWidth="2" strokeLinecap="round" />
     </svg>
+  );
+}
+
+// Consistent orange-tint badge wrapper used across feature bars and solution cards
+export function IconBadge({
+  children,
+  size = 46,
+  radius = 10,
+  tone = "tint",
+}: {
+  children: React.ReactNode;
+  size?: number;
+  radius?: number;
+  tone?: "tint" | "overlay";
+}) {
+  return (
+    <span
+      style={{
+        width: size,
+        height: size,
+        borderRadius: radius,
+        backgroundColor: tone === "overlay" ? "rgba(8,8,8,0.78)" : "rgba(242,101,34,0.10)",
+        border: "1px solid rgba(242,101,34,0.45)",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+      }}
+    >
+      {children}
+    </span>
   );
 }
 

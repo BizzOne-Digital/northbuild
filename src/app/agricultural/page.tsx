@@ -3,7 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import CTABar from "@/components/ui/CTABar";
-import { ArrowRightIcon, CheckCircleIcon } from "@/components/icons/Icons";
+import {
+  ArrowRightIcon,
+  CheckCircleIcon,
+  IconBadge,
+  ShieldIcon,
+  TractorIcon,
+  LockIcon,
+  MapleLeafIcon,
+} from "@/components/icons/Icons";
 
 const SOLUTIONS = [
   {
@@ -69,11 +77,11 @@ const GALLERY = [
 ];
 
 const FEATURES = [
-  { title: "Built for Agriculture", desc: "Heavy-duty doors and equipment made for tough farm environments." },
-  { title: "Efficient Operation", desc: "Designed to keep your operation moving smoothly." },
-  { title: "Durable & Dependable", desc: "Premium materials and workmanship you can count on." },
-  { title: "Safety Focused", desc: "Engineered with safety features to protect your people and assets." },
-  { title: "Local Service You Can Trust", desc: "Fast, local support from a team that understands agriculture." },
+  { title: "Built for Agriculture", desc: "Heavy-duty doors and equipment made for tough farm environments.", icon: <ShieldIcon size={24} /> },
+  { title: "Efficient Operation", desc: "Designed to keep your operation moving smoothly.", icon: <TractorIcon size={24} /> },
+  { title: "Durable & Dependable", desc: "Premium materials and workmanship you can count on.", icon: <CheckCircleIcon size={24} /> },
+  { title: "Safety Focused", desc: "Engineered with safety features to protect your people and assets.", icon: <LockIcon size={24} color="#F26522" /> },
+  { title: "Local Service You Can Trust", desc: "Fast, local support from a team that understands agriculture.", icon: <MapleLeafIcon size={24} /> },
 ];
 
 const WHY = [
@@ -119,7 +127,8 @@ export default function AgriculturalPage() {
       <section style={{ backgroundColor: "#0D0D0D", borderBottom: "1px solid #1A1A1A" }}>
         <div className="nb-features5" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(5, 1fr)" }}>
           {FEATURES.map((f, i) => (
-            <div key={f.title} style={{ padding: "1.75rem 1rem", borderRight: i < 4 ? "1px solid #1A1A1A" : "none", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            <div key={f.title} style={{ padding: "1.75rem 1rem", borderRight: i < 4 ? "1px solid #1A1A1A" : "none", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              <IconBadge>{f.icon}</IconBadge>
               <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, color: "#FFFFFF", fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.07em" }}>
                 {f.title}
               </div>
@@ -147,8 +156,8 @@ export default function AgriculturalPage() {
               >
                 <div style={{ position: "relative", height: "190px", overflow: "hidden" }}>
                   <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }} unoptimized />
-                  <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem", backgroundColor: "rgba(8,8,8,0.85)", border: "1px solid #2C2C2C", borderRadius: "4px", padding: "0.4rem" }}>
-                    {s.icon}
+                  <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem" }}>
+                    <IconBadge size={42} radius={8} tone="overlay">{s.icon}</IconBadge>
                   </div>
                 </div>
                 <div style={{ padding: "1.25rem" }}>
@@ -191,16 +200,16 @@ export default function AgriculturalPage() {
 
       {/* ── WHY NORTHBUILT ── */}
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
-        {/* Mountain backdrop */}
+        {/* Agriculture backdrop */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/moun.png')",
+            backgroundImage: "url('/agriculture.png')",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center bottom",
+            backgroundPosition: "center right",
             backgroundSize: "cover",
-            opacity: 0.55,
+            opacity: 0.9,
             zIndex: 0,
             pointerEvents: "none",
           }}
@@ -215,8 +224,8 @@ export default function AgriculturalPage() {
             pointerEvents: "none",
           }}
         />
-        <div className="nb-grid-2" style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "60% 40%", gap: "2rem", alignItems: "center" }}>
-          <div>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", minHeight: "340px", display: "flex", alignItems: "center" }}>
+          <div style={{ maxWidth: "520px" }}>
             <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#FFFFFF", letterSpacing: "0.04em", marginBottom: "0.25rem", lineHeight: 1.05 }}>
               Why Farmers<br />Choose <span style={{ color: "#F26522" }}>Northbuilt</span>
             </h2>
@@ -228,23 +237,6 @@ export default function AgriculturalPage() {
                 </div>
               ))}
             </div>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <img
-              src="/car.png"
-              alt="Northbuilt Truck"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "contain",
-                WebkitMaskImage:
-                  "linear-gradient(90deg, transparent 0%, #000 18%, #000 100%), linear-gradient(0deg, transparent 0%, #000 12%, #000 100%)",
-                maskImage:
-                  "linear-gradient(90deg, transparent 0%, #000 18%, #000 100%), linear-gradient(0deg, transparent 0%, #000 12%, #000 100%)",
-                WebkitMaskComposite: "source-in",
-                maskComposite: "intersect",
-              }}
-            />
           </div>
         </div>
       </section>

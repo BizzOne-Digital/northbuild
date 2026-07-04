@@ -212,7 +212,7 @@ export default function ResidentialPage() {
 
       {/* ── WHY NORTHBUILT ── */}
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
-        {/* Mountain backdrop */}
+        {/* Mountain backdrop (full scene) */}
         <div
           style={{
             position: "absolute",
@@ -221,23 +221,40 @@ export default function ResidentialPage() {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center bottom",
             backgroundSize: "cover",
-            opacity: 0.55,
+            opacity: 0.9,
             zIndex: 0,
             pointerEvents: "none",
           }}
         />
-        {/* Left black shade */}
+        {/* Fleet truck sitting on the ground, bottom-right */}
+        <img
+          src="/car.png"
+          alt="Northbuilt Truck"
+          style={{
+            position: "absolute",
+            right: "clamp(-40px, -2vw, 0px)",
+            bottom: 0,
+            width: "min(70%, 880px)",
+            height: "auto",
+            objectFit: "contain",
+            zIndex: 0,
+            pointerEvents: "none",
+            WebkitMaskImage: "linear-gradient(90deg, transparent 0%, #000 22%, #000 100%)",
+            maskImage: "linear-gradient(90deg, transparent 0%, #000 22%, #000 100%)",
+          }}
+        />
+        {/* Left black shade for text legibility */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.85) 30%, rgba(11,11,11,0.35) 60%, rgba(11,11,11,0) 85%)",
-            zIndex: 0,
+            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.8) 20%, rgba(11,11,11,0.25) 40%, rgba(11,11,11,0) 52%)",
+            zIndex: 1,
             pointerEvents: "none",
           }}
         />
-        <div className="nb-grid-2" style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "60% 40%", gap: "2rem", alignItems: "center" }}>
-          <div>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: "1280px", margin: "0 auto", minHeight: "340px", display: "flex", alignItems: "center" }}>
+          <div style={{ maxWidth: "520px" }}>
             <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#FFFFFF", letterSpacing: "0.04em", marginBottom: "0.25rem", lineHeight: 1.05 }}>
               Why Homeowners<br />Choose <span style={{ color: "#F26522" }}>Northbuilt</span>
             </h2>
@@ -249,23 +266,6 @@ export default function ResidentialPage() {
                 </div>
               ))}
             </div>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <img
-              src="/car.png"
-              alt="Northbuilt Truck"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "contain",
-                WebkitMaskImage:
-                  "linear-gradient(90deg, transparent 0%, #000 18%, #000 100%), linear-gradient(0deg, transparent 0%, #000 12%, #000 100%)",
-                maskImage:
-                  "linear-gradient(90deg, transparent 0%, #000 18%, #000 100%), linear-gradient(0deg, transparent 0%, #000 12%, #000 100%)",
-                WebkitMaskComposite: "source-in",
-                maskComposite: "intersect",
-              }}
-            />
           </div>
         </div>
       </section>
