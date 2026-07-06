@@ -205,7 +205,7 @@ export default function AgriculturalPage() {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/agriculture.png')",
+            backgroundImage: "url('/new/foot2.jpeg')",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center right",
             backgroundSize: "cover",

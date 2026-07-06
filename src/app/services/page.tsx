@@ -20,7 +20,7 @@ const SERVICES = [
   {
     title: "Spring Replacement",
     desc: "Torsion and extension spring replacement done safely by trained technicians. Never a DIY job — let us handle it right.",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
+    img: "/new/spring.jpeg",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <circle cx="12" cy="12" r="9" stroke="#F26522" strokeWidth="2" />
@@ -44,7 +44,7 @@ const SERVICES = [
   {
     title: "Preventative Maintenance",
     desc: "Seasonal tune-ups to extend the life of your door system and catch small issues before they turn into expensive repairs.",
-    img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
+    img: "/new/mainta.jpeg",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#F26522" strokeWidth="2" strokeLinecap="round" />
@@ -55,7 +55,7 @@ const SERVICES = [
   {
     title: "Cable & Track Repair",
     desc: "Realignment, cable rewinding, and track repairs to keep your door running smoothly and safely every time.",
-    img: "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=600&q=80",
+    img: "/new/cable.jpeg",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <path d="M4 6h16M4 12h16M4 18h8" stroke="#F26522" strokeWidth="2" strokeLinecap="round" />
@@ -67,7 +67,7 @@ const SERVICES = [
   {
     title: "Weather Seal Replacement",
     desc: "Bottom seal and perimeter seal replacement to keep your garage insulated, pest-free, and weather-tight year-round.",
-    img: "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?w=600&q=80",
+    img: "/new/weather.jpeg",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <path d="M12 2L3 6V12C3 16.5 7 20.7 12 22C17 20.7 21 16.5 21 12V6L12 2Z" stroke="#F26522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -107,7 +107,7 @@ export default function ServicesPage() {
       {/* ── HERO ── */}
       <section style={{ position: "relative", minHeight: "75vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
         <Image
-          src="/4th.png"
+          src="/new/servicehero.jpeg"
           alt="Garage Door Service"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

@@ -10,40 +10,22 @@ const FEATURES = [
   {
     title: "Quality Materials",
     desc: "Built to handle Canadian weather.",
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2L3 6V12C3 16.5 7 20.7 12 22C17 20.7 21 16.5 21 12V6L12 2Z" stroke="#F26522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M9 12L11 14L15 10" stroke="#F26522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    img: "/new/svg1.jpeg",
   },
   {
     title: "Expert Installation",
     desc: "Installed right the first time.",
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="#F26522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    img: "/new/svg3.jpeg",
   },
   {
     title: "Reliable Service",
     desc: "Fast, professional support you can count on.",
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="#F26522" strokeWidth="2" />
-        <path d="M9 12L11 14L15 10" stroke="#F26522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    img: "/new/svg4.jpeg",
   },
   {
     title: "Southwestern Ontario",
     desc: "Local roots. Community focused.",
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2C12 2 9 6 6 6C6 6 9 8 8 11C8 11 5 10 4 12C4 12 7 12 8 14C8 14 6 15 7 17C7 17 10 15 12 16V22M12 2C12 2 15 6 18 6C18 6 15 8 16 11C16 11 19 10 20 12C20 12 17 12 16 14C16 14 18 15 17 17C17 17 14 15 12 16" stroke="#F26522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    img: "/new/svg2.jpeg",
   },
 ];
 
@@ -79,14 +61,7 @@ const SOLUTIONS = [
     href: "/agricultural",
     img: "/img3.png",
     btnLabel: "Explore Agricultural",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <circle cx="7" cy="17" r="3" stroke="#F26522" strokeWidth="2" />
-        <circle cx="17" cy="18" r="2" stroke="#F26522" strokeWidth="2" />
-        <path d="M10 17H15M15 18V13L12 9H7V14" stroke="#F26522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M15 11H19L21 14" stroke="#F26522" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    iconImg: "/new/svg6.jpeg",
   },
   {
     title: "Service & Repairs",
@@ -94,11 +69,7 @@ const SOLUTIONS = [
     href: "/services",
     img: "/img4.png",
     btnLabel: "View Services",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="#F26522" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    iconImg: "/new/svg3.jpeg",
   },
 ];
 
@@ -124,7 +95,7 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section style={{ position: "relative", minHeight: "88vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
         <Image
-          src="/heroup.png"
+          src="new/hero.jpeg"
           alt="Northbuilt Garage Door"
           fill
           style={{ objectFit: "cover", objectPosition: "center right" }}
@@ -158,7 +129,14 @@ export default function HomePage() {
         <div className="nb-features" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
           {FEATURES.map((f, i) => (
             <div key={f.title} style={{ padding: "2rem 1.5rem", borderRight: i < 3 ? "1px solid #1A1A1A" : "none", display: "flex", alignItems: "flex-start", gap: "1rem" }}>
-              <IconBadge>{f.icon}</IconBadge>
+              <Image
+                src={f.img}
+                alt={f.title}
+                width={38}
+                height={38}
+                unoptimized
+                style={{ objectFit: "contain", mixBlendMode: "screen", flexShrink: 0 }}
+              />
               <div>
                 <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, color: "#FFFFFF", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.3rem" }}>
                   {f.title}
@@ -193,7 +171,20 @@ export default function HomePage() {
                   <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }} unoptimized />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(8,8,8,0) 40%, rgba(8,8,8,0.7) 100%)" }} />
                   <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem" }}>
-                    <IconBadge size={42} radius={8} tone="overlay">{s.icon}</IconBadge>
+                    <IconBadge size={42} radius={8} tone="overlay">
+                      {s.iconImg ? (
+                        <Image
+                          src={s.iconImg}
+                          alt={s.title}
+                          width={26}
+                          height={26}
+                          unoptimized
+                          style={{ objectFit: "contain", mixBlendMode: "screen" }}
+                        />
+                      ) : (
+                        s.icon
+                      )}
+                    </IconBadge>
                   </div>
                 </div>
                 <div style={{ padding: "1.25rem" }}>
