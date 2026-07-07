@@ -32,7 +32,7 @@ const SERVICES = [
   {
     title: "Opener Service & Install",
     desc: "LiftMaster and Manaras opener repair, reprogramming, smart home integration, and full new installations.",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    img: "/new/mainta.jpeg",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <rect x="2" y="6" width="20" height="12" rx="2" stroke="#F26522" strokeWidth="2" />
@@ -112,7 +112,7 @@ export default function ServicesPage() {
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
           priority
-          unoptimized
+
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,8,8,.97) 0%, rgba(8,8,8,.82) 50%, rgba(8,8,8,.15) 100%)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: "1280px", margin: "0 auto", padding: "5rem 1.5rem", width: "100%" }}>
@@ -175,7 +175,7 @@ export default function ServicesPage() {
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
               >
                 <div style={{ position: "relative", height: "180px", overflow: "hidden" }}>
-                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }} unoptimized />
+                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }}/>
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(8,8,8,0) 40%, rgba(8,8,8,0.85) 100%)" }} />
                   <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem", backgroundColor: "rgba(8,8,8,0.85)", border: "1px solid #2C2C2C", borderRadius: "4px", padding: "0.4rem" }}>
                     {s.icon}
@@ -256,7 +256,7 @@ export default function ServicesPage() {
               alt="Service Technician"
               fill
               style={{ objectFit: "cover" }}
-              unoptimized
+
             />
             {/* call out badge */}
             <div

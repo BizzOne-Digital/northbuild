@@ -59,7 +59,7 @@ const SOLUTIONS = [
     title: "Preventative Maintenance",
     desc: "Customized maintenance programs to extend the life of your equipment.",
     href: "/services",
-    img: "/comm4.png",
+    img: "/new/spring.jpeg",
     btnLabel: "Learn More",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -105,7 +105,7 @@ export default function CommercialPage() {
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
           priority
-          unoptimized
+
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,8,8,.96) 0%, rgba(8,8,8,.80) 50%, rgba(8,8,8,.15) 100%)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: "1280px", margin: "0 auto", padding: "5rem 1.5rem", width: "100%" }}>
@@ -157,7 +157,7 @@ export default function CommercialPage() {
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
               >
                 <div style={{ position: "relative", height: "190px", overflow: "hidden" }}>
-                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }} unoptimized />
+                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }}/>
                   {/* icon overlay top-left */}
                   <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem" }}>
                     <IconBadge size={42} radius={8} tone="overlay">{s.icon}</IconBadge>
@@ -191,7 +191,7 @@ export default function CommercialPage() {
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#F26522")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C")}
               >
-                <Image src={img} alt={`Project ${i + 1}`} fill style={{ objectFit: "cover" }} unoptimized />
+                <Image src={img} alt={`Project ${i + 1}`} fill style={{ objectFit: "cover" }}/>
               </div>
             ))}
           </div>
@@ -203,35 +203,18 @@ export default function CommercialPage() {
 
       {/* ── WHY NORTHBUILT ── */}
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
-        {/* Mountain backdrop (full scene) */}
+        {/* Commercial dock backdrop */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/moun.png')",
+            backgroundImage: "url('/new/foot.jpeg')",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center bottom",
+            backgroundPosition: "center right",
             backgroundSize: "cover",
             opacity: 0.9,
             zIndex: 0,
             pointerEvents: "none",
-          }}
-        />
-        {/* Fleet truck sitting on the ground, bottom-right */}
-        <img
-          src="/car.png"
-          alt="Northbuilt Truck"
-          style={{
-            position: "absolute",
-            right: "clamp(-40px, -2vw, 0px)",
-            bottom: 0,
-            width: "min(70%, 880px)",
-            height: "auto",
-            objectFit: "contain",
-            zIndex: 0,
-            pointerEvents: "none",
-            WebkitMaskImage: "linear-gradient(90deg, transparent 0%, #000 22%, #000 100%)",
-            maskImage: "linear-gradient(90deg, transparent 0%, #000 22%, #000 100%)",
           }}
         />
         {/* Left black shade for text legibility */}
@@ -239,7 +222,7 @@ export default function CommercialPage() {
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.8) 20%, rgba(11,11,11,0.25) 40%, rgba(11,11,11,0) 52%)",
+            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.85) 30%, rgba(11,11,11,0.35) 60%, rgba(11,11,11,0) 85%)",
             zIndex: 1,
             pointerEvents: "none",
           }}

@@ -103,7 +103,7 @@ export default function AgriculturalPage() {
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
           priority
-          unoptimized
+
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,8,8,.96) 0%, rgba(8,8,8,.80) 50%, rgba(8,8,8,.15) 100%)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: "1280px", margin: "0 auto", padding: "5rem 1.5rem", width: "100%" }}>
@@ -155,7 +155,7 @@ export default function AgriculturalPage() {
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
               >
                 <div style={{ position: "relative", height: "190px", overflow: "hidden" }}>
-                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }} unoptimized />
+                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }}/>
                   <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem" }}>
                     <IconBadge size={42} radius={8} tone="overlay">{s.icon}</IconBadge>
                   </div>
@@ -188,7 +188,7 @@ export default function AgriculturalPage() {
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#F26522")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C")}
               >
-                <Image src={img} alt={`Project ${i + 1}`} fill style={{ objectFit: "cover" }} unoptimized />
+                <Image src={img} alt={`Project ${i + 1}`} fill style={{ objectFit: "cover" }}/>
               </div>
             ))}
           </div>

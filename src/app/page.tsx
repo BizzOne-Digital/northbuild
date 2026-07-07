@@ -95,12 +95,12 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section style={{ position: "relative", minHeight: "88vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
         <Image
-          src="new/hero.jpeg"
+          src="/new/hero.jpeg"
           alt="Northbuilt Garage Door"
           fill
           style={{ objectFit: "cover", objectPosition: "center right" }}
           priority
-          unoptimized
+
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,8,8,.97) 0%, rgba(8,8,8,.88) 45%, rgba(8,8,8,.25) 100%)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: "1280px", margin: "0 auto", padding: "6rem 1.5rem", width: "100%" }}>
@@ -134,7 +134,7 @@ export default function HomePage() {
                 alt={f.title}
                 width={38}
                 height={38}
-                unoptimized
+
                 style={{ objectFit: "contain", mixBlendMode: "screen", flexShrink: 0 }}
               />
               <div>
@@ -168,7 +168,7 @@ export default function HomePage() {
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
               >
                 <div style={{ position: "relative", height: "200px", overflow: "hidden" }}>
-                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }} unoptimized />
+                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }}/>
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(8,8,8,0) 40%, rgba(8,8,8,0.7) 100%)" }} />
                   <div style={{ position: "absolute", top: "0.75rem", left: "0.75rem" }}>
                     <IconBadge size={42} radius={8} tone="overlay">
@@ -178,7 +178,7 @@ export default function HomePage() {
                           alt={s.title}
                           width={26}
                           height={26}
-                          unoptimized
+
                           style={{ objectFit: "contain", mixBlendMode: "screen" }}
                         />
                       ) : (
@@ -217,7 +217,7 @@ export default function HomePage() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#F26522"; (e.currentTarget as HTMLElement).style.transform = "scale(1.01)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C"; (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
               >
-                <Image src={item.img} alt={item.label} fill style={{ objectFit: "cover" }} unoptimized />
+                <Image src={item.img} alt={item.label} fill style={{ objectFit: "cover" }}/>
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(8,8,8,0) 55%, rgba(8,8,8,0.85) 100%)" }} />
                 <span style={{ position: "absolute", bottom: "0.75rem", left: "0.85rem", color: "#D7D7D7", fontSize: "0.72rem", fontFamily: "'Inter', sans-serif", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>
                   {item.label}

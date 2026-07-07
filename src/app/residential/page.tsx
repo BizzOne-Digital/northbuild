@@ -81,7 +81,7 @@ export default function ResidentialPage() {
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
           priority
-          unoptimized
+
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,8,8,.95) 0%, rgba(8,8,8,.80) 50%, rgba(8,8,8,.20) 100%)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: "1280px", margin: "0 auto", padding: "5rem 1.5rem", width: "100%" }}>
@@ -168,7 +168,7 @@ export default function ResidentialPage() {
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
               >
                 <div style={{ position: "relative", height: "200px", overflow: "hidden" }}>
-                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }} unoptimized />
+                  <Image src={s.img} alt={s.title} fill style={{ objectFit: "cover" }}/>
                 </div>
                 <div style={{ padding: "1.25rem" }}>
                   <div style={{ width: "24px", height: "3px", backgroundColor: "#F26522", marginBottom: "0.6rem" }} />
@@ -198,7 +198,7 @@ export default function ResidentialPage() {
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#F26522")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C")}
               >
-                <Image src={img} alt={`Install ${i + 1}`} fill style={{ objectFit: "cover" }} unoptimized />
+                <Image src={img} alt={`Install ${i + 1}`} fill style={{ objectFit: "cover" }}/>
               </div>
             ))}
           </div>
