@@ -32,7 +32,7 @@ const SERVICES = [
   {
     title: "Opener Service & Install",
     desc: "LiftMaster and Manaras opener repair, reprogramming, smart home integration, and full new installations.",
-    img: "/new/mainta.jpeg",
+    img: "/new/serviceheroo.jpeg",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <rect x="2" y="6" width="20" height="12" rx="2" stroke="#F26522" strokeWidth="2" />
@@ -107,7 +107,7 @@ export default function ServicesPage() {
       {/* ── HERO ── */}
       <section style={{ position: "relative", minHeight: "75vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
         <Image
-          src="/new/servicehero.jpeg"
+          src="/new/serviceheroo.jpeg"
           alt="Garage Door Service"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

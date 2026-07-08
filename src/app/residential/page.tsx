@@ -28,7 +28,7 @@ const STYLES = [
     title: "Full View & Aluminum",
     desc: "Modern glass and aluminum options for a bold statement.",
     href: "/residential",
-    img: "new/glassdoor.jpeg",
+    img: "/new/glassdoor.jpeg",
   },
 ];
 
