@@ -225,7 +225,7 @@ export default function ResidentialPage() {
         />
         {/* Fleet truck sitting on the ground, bottom-right */}
         <img
-          src="/car.png"
+          src="/newcar.png"
           alt="Northbuilt Truck"
           style={{
             position: "absolute",

@@ -18,6 +18,8 @@ export default function ContactPage() {
     agree: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -27,9 +29,28 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+      setSubmitted(true);
+    } catch (err) {
+      console.error("[contact] submission request failed:", err);
+      setError("Could not reach the server. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -215,12 +236,18 @@ export default function ContactPage() {
                       <a href="#" style={{ color: "#F26522", textDecoration: "none" }}>Privacy Policy</a>
                     </span>
                   </label>
+                  {/* Error */}
+                  {error && (
+                    <div style={{ color: "#FF6B6B", fontFamily: "'Inter', sans-serif", fontSize: "0.82rem", backgroundColor: "rgba(255,107,107,0.08)", border: "1px solid rgba(255,107,107,0.3)", borderRadius: "4px", padding: "0.75rem 1rem" }}>
+                      {error}
+                    </div>
+                  )}
                   {/* Submit */}
                   <button
                     onClick={handleSubmit}
-                    disabled={!form.agree}
+                    disabled={!form.agree || submitting}
                     style={{
-                      backgroundColor: form.agree ? "#F26522" : "#3A3A3A",
+                      backgroundColor: form.agree && !submitting ? "#F26522" : "#3A3A3A",
                       color: "#fff",
                       padding: "0.9rem 2rem",
                       border: "none",
@@ -230,16 +257,16 @@ export default function ContactPage() {
                       fontSize: "0.875rem",
                       letterSpacing: "0.08em",
                       textTransform: "uppercase",
-                      cursor: form.agree ? "pointer" : "not-allowed",
+                      cursor: form.agree && !submitting ? "pointer" : "not-allowed",
                       transition: "background-color 0.2s",
                       display: "flex",
                       alignItems: "center",
                       gap: "0.5rem",
                     }}
-                    onMouseEnter={(e) => { if (form.agree) (e.currentTarget as HTMLElement).style.backgroundColor = "#FF7A1A"; }}
-                    onMouseLeave={(e) => { if (form.agree) (e.currentTarget as HTMLElement).style.backgroundColor = "#F26522"; }}
+                    onMouseEnter={(e) => { if (form.agree && !submitting) (e.currentTarget as HTMLElement).style.backgroundColor = "#FF7A1A"; }}
+                    onMouseLeave={(e) => { if (form.agree && !submitting) (e.currentTarget as HTMLElement).style.backgroundColor = "#F26522"; }}
                   >
-                    Submit Request →
+                    {submitting ? "Sending..." : "Submit Request →"}
                   </button>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                     <LockIcon size={14} color="#7C7C7C" />

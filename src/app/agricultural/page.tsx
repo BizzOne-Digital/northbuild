@@ -197,18 +197,21 @@ export default function AgriculturalPage() {
 
       {/* ── WHY NORTHBUILT ── */}
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
-        {/* Agriculture backdrop */}
-        <div
+        {/* Agriculture truck image, right side */}
+        <img
+          src="/newcar.png"
+          alt="Northbuilt Agricultural Truck"
           style={{
             position: "absolute",
-            inset: 0,
-            backgroundImage: "url('/new/foot2.jpeg')",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center right",
-            backgroundSize: "cover",
-            opacity: 0.9,
+            right: 0,
+            top: 0,
+            height: "100%",
+            width: "min(70%, 1100px)",
+            objectFit: "cover",
             zIndex: 0,
             pointerEvents: "none",
+            WebkitMaskImage: "linear-gradient(90deg, transparent 0%, #000 22%, #000 100%)",
+            maskImage: "linear-gradient(90deg, transparent 0%, #000 22%, #000 100%)",
           }}
         />
         {/* Left black shade */}
@@ -216,7 +219,7 @@ export default function AgriculturalPage() {
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.85) 30%, rgba(11,11,11,0.35) 60%, rgba(11,11,11,0) 85%)",
+            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.8) 20%, rgba(11,11,11,0.25) 40%, rgba(11,11,11,0) 52%)",
             zIndex: 0,
             pointerEvents: "none",
           }}
