@@ -59,7 +59,7 @@ const SOLUTIONS = [
     title: "Preventative Maintenance",
     desc: "Customized maintenance programs to extend the life of your equipment.",
     href: "/services",
-    img: "/new/spring.jpeg",
+    img: "/new/mainta.jpeg",
     btnLabel: "Learn More",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -166,10 +166,7 @@ export default function CommercialPage() {
                 <div style={{ padding: "1.25rem" }}>
                   <div style={{ width: "24px", height: "3px", backgroundColor: "#F26522", marginBottom: "0.6rem" }} />
                   <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.2rem", color: "#FFFFFF", letterSpacing: "0.05em", marginBottom: "0.35rem" }}>{s.title}</h3>
-                  <p style={{ color: "#A3A3A3", fontSize: "0.78rem", fontFamily: "'Inter', sans-serif", lineHeight: 1.5, marginBottom: "1rem" }}>{s.desc}</p>
-                  <Link href={s.href} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", color: "#F26522", textDecoration: "none", fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                    {s.btnLabel} <ArrowRightIcon size={13} color="#F26522" />
-                  </Link>
+                  <p style={{ color: "#A3A3A3", fontSize: "0.78rem", fontFamily: "'Inter', sans-serif", lineHeight: 1.5 }}>{s.desc}</p>
                 </div>
               </div>
             ))}

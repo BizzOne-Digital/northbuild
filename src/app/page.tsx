@@ -75,9 +75,9 @@ const SOLUTIONS = [
 
 const GALLERY = [
   { img: "/1.png", label: "Full View Aluminum" },
-  { img: "/2.png", label: "Carriage House" },
+  { img: "/4.png", label: "Carriage House" },
   { img: "/3.png", label: "Commercial Roll-up" },
-  { img: "/4.png", label: "Agricultural Steel" },
+  { img: "/res1.png", label: "Residential" },
 ];
 
 const BRANDS = ["Upwardor", "Richards-Wilcox", "Garaga", "LiftMaster", "ManarasOpera"];
@@ -190,10 +190,7 @@ export default function HomePage() {
                 <div style={{ padding: "1.25rem" }}>
                   <div style={{ width: "24px", height: "3px", backgroundColor: "#F26522", marginBottom: "0.6rem" }} />
                   <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.3rem", color: "#FFFFFF", letterSpacing: "0.05em", marginBottom: "0.2rem" }}>{s.title}</h3>
-                  <p style={{ color: "#7C7C7C", fontSize: "0.72rem", fontFamily: "'Inter', sans-serif", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "1rem" }}>{s.subtitle}</p>
-                  <Link href={s.href} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", color: "#F26522", textDecoration: "none", fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                    {s.btnLabel} <ArrowRightIcon size={13} color="#F26522" />
-                  </Link>
+                  <p style={{ color: "#7C7C7C", fontSize: "0.72rem", fontFamily: "'Inter', sans-serif", textTransform: "uppercase", letterSpacing: "0.1em" }}>{s.subtitle}</p>
                 </div>
               </div>
             ))}
