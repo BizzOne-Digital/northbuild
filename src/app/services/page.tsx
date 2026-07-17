@@ -248,68 +248,61 @@ export default function ServicesPage() {
       </section>
 
       {/* ── WHY NORTHBUILT ── */}
-      <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem" }}>
-        <div className="nb-grid-2" style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
-          <div style={{ position: "relative", height: "400px", borderRadius: "6px", overflow: "hidden" }}>
-            <Image
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=85"
-              alt="Service Technician"
-              fill
-              style={{ objectFit: "cover" }}
-
-            />
-            {/* call out badge */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: "1.5rem",
-                left: "1.5rem",
-                backgroundColor: "#F26522",
-                borderRadius: "4px",
-                padding: "0.75rem 1.25rem",
-              }}
-            >
-              <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.4rem", color: "#fff", letterSpacing: "0.04em", lineHeight: 1 }}>
-                1 Business Day
-              </div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.72rem", color: "rgba(255,255,255,0.85)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "0.2rem" }}>
-                Response Time
-              </div>
-            </div>
-          </div>
-          <div>
-            <div style={{ display: "inline-block", width: "40px", height: "3px", backgroundColor: "#F26522", marginBottom: "1rem" }} />
-            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#FFFFFF", letterSpacing: "0.04em", lineHeight: 1.05, marginBottom: "1.5rem" }}>
+      <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
+        {/* Mountain backdrop (full scene) */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/moun.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center bottom",
+            backgroundSize: "cover",
+            opacity: 0.9,
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        {/* Fleet truck image, right side */}
+        <img
+          src="/new/foot.jpeg"
+          alt="Northbuilt Truck"
+          style={{
+            position: "absolute",
+            right: 0,
+            top: 0,
+            height: "100%",
+            width: "min(70%, 1100px)",
+            objectFit: "cover",
+            zIndex: 0,
+            pointerEvents: "none",
+            WebkitMaskImage: "linear-gradient(90deg, transparent 0%, #000 22%, #000 100%)",
+            maskImage: "linear-gradient(90deg, transparent 0%, #000 22%, #000 100%)",
+          }}
+        />
+        {/* Left black shade for text legibility */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(90deg, #0B0B0B 0%, rgba(11,11,11,0.8) 20%, rgba(11,11,11,0.25) 40%, rgba(11,11,11,0) 52%)",
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
+        />
+        <div style={{ position: "relative", zIndex: 2, maxWidth: "1280px", margin: "0 auto", minHeight: "340px", display: "flex", alignItems: "center" }}>
+          <div style={{ maxWidth: "520px" }}>
+            <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#FFFFFF", letterSpacing: "0.04em", marginBottom: "0.25rem", lineHeight: 1.05 }}>
               Why Homeowners &amp;<br />Businesses Choose <span style={{ color: "#F26522" }}>Northbuilt</span>
             </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginBottom: "2rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "1.5rem" }}>
               {WHY.map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
                   <CheckCircleIcon size={18} color="#F26522" />
-                  <span style={{ color: "#D7D7D7", fontFamily: "'Inter', sans-serif", fontSize: "0.9rem" }}>{item}</span>
+                  <span style={{ color: "#D7D7D7", fontFamily: "'Inter', sans-serif", fontSize: "0.88rem" }}>{item}</span>
                 </div>
               ))}
             </div>
-            <a
-              href={`tel:${SITE.phoneFull}`}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.6rem",
-                backgroundColor: "#F26522",
-                color: "#fff",
-                padding: "0.85rem 1.75rem",
-                borderRadius: "4px",
-                textDecoration: "none",
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 700,
-                fontSize: "0.9rem",
-                letterSpacing: "0.04em",
-              }}
-            >
-              <PhoneIcon size={18} color="#fff" />
-              Call Now: {SITE.phone}
-            </a>
           </div>
         </div>
       </section>

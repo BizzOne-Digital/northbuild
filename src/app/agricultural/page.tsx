@@ -199,7 +199,7 @@ export default function AgriculturalPage() {
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
         {/* Agriculture truck image, right side */}
         <img
-          src="/newcar.png"
+          src="/new/foot2.jpeg"
           alt="Northbuilt Agricultural Truck"
           style={{
             position: "absolute",
