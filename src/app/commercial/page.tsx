@@ -202,7 +202,7 @@ export default function CommercialPage() {
       <section style={{ backgroundColor: "#0B0B0B", padding: "5rem 1.5rem", position: "relative", overflow: "hidden" }}>
         {/* Commercial dock + truck image, right side */}
         <img
-          src="/newcar.png"
+          src="/new/foot.jpeg"
           alt="Northbuilt Commercial Truck"
           style={{
             position: "absolute",
