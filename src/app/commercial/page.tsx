@@ -100,7 +100,7 @@ export default function CommercialPage() {
       {/* ── HERO ── */}
       <section style={{ position: "relative", minHeight: "80vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
         <Image
-          src="/new/foot.jpeg"
+          src="/rescom1.png"
           alt="Commercial Dock Doors"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

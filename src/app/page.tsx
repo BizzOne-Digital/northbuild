@@ -161,9 +161,10 @@ export default function HomePage() {
           </div>
           <div className="nb-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1.25rem" }}>
             {SOLUTIONS.map((s) => (
-              <div
+              <Link
                 key={s.title}
-                style={{ backgroundColor: "#1A1A1A", border: "1px solid #2C2C2C", borderRadius: "6px", overflow: "hidden", transition: "border-color 0.2s, transform 0.2s" }}
+                href={s.href}
+                style={{ display: "block", backgroundColor: "#1A1A1A", border: "1px solid #2C2C2C", borderRadius: "6px", overflow: "hidden", transition: "border-color 0.2s, transform 0.2s" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#F26522"; (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#2C2C2C"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}
               >
@@ -192,7 +193,7 @@ export default function HomePage() {
                   <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.3rem", color: "#FFFFFF", letterSpacing: "0.05em", marginBottom: "0.2rem" }}>{s.title}</h3>
                   <p style={{ color: "#7C7C7C", fontSize: "0.72rem", fontFamily: "'Inter', sans-serif", textTransform: "uppercase", letterSpacing: "0.1em" }}>{s.subtitle}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
